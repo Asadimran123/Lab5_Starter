@@ -7,9 +7,13 @@ function selectImage(){
   hornImage.setAttribute("src", "assets/images/" + event.target.value + ".svg");
 }
 
+function volumeControl(){
+
+}
+
 function init() {
   //control whcih horn image is displayed
   var horn = document.getElementById("horn-select");
-  horn.addEventListener('click', selectImage);
+  horn.addEventListener('change', selectImage);
 }
 
