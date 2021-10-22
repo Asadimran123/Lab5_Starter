@@ -53,7 +53,7 @@ function playSound(event){
 function init() {
   // TODO
   document.getElementById("horn-select").addEventListener('change', setHorn);
-  document.getElementById("volume-controls").addEventListener('change', setVolumeIcon);
+  document.getElementById("volume-controls").addEventListener('input', setVolumeIcon);
   document.querySelector('button').addEventListener('click', playSound);
 
 }
