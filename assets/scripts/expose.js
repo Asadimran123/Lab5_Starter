@@ -1,6 +1,7 @@
 // expose.js
 
 window.addEventListener('DOMContentLoaded', init);
+const jsConfetti = new JSConfetti();
 
 
 function setHorn(event){
@@ -34,21 +35,25 @@ function setVolumeIcon(event){
   } 
 }
 
-//sets volume to play at
+// when you  click the "play soound", this function makes the sound
 function playSound(event){
+  var volumeValue = document.getElementById("volume").value;
   var hornAudio = document.getElementsByClassName("hidden")[0];
-  var volumeValue = document.getElementsById("volume-controls").value/100;
-  hornAudio.setAttribute("src", "assets/audio/" + event.target.value + ".mp3"); 
-  hornAudio.setAttribute("volume-controls.value", volumeValue);
+  hornAudio.volume = (volumeValue/100);
+  console.log("playing sounds")
   hornAudio.play();
+
+  var horn = document.getElementById("horn-select");
+  if (horn.value == "party-horn"){
+    console.log("playing confetti");
+    jsConfetti.addConfetti();
+  }
 }
-
-
 
 function init() {
   // TODO
   document.getElementById("horn-select").addEventListener('change', setHorn);
   document.getElementById("volume-controls").addEventListener('change', setVolumeIcon);
-  document.getElementsByClassName("hidden").addEventListener('change', playSound);
+  document.querySelector('button').addEventListener('click', playSound);
 
 }
