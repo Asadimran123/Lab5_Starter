@@ -32,19 +32,20 @@ function setVolumeIcon(event){
   else if( volumeValue >= 67){
     volumeIcon.setAttribute("src", "assets/icons/volume-level-3.svg");  
     volumeIcon.setAttribute("alt", "Volume level 3"); 
-  } 
+  }
+  // setting the corresponding volume
+  var hornAudio = document.getElementsByClassName("hidden")[0];
+  hornAudio.volume = (volumeValue/100);
 }
 
 // when you  click the "play soound", this function makes the sound
 function playSound(event){
-  var volumeValue = document.getElementById("volume").value;
   var hornAudio = document.getElementsByClassName("hidden")[0];
-  hornAudio.volume = (volumeValue/100);
   hornAudio.play();
+
   var hornSelect = document.getElementById("horn-select").value;
   // Display Confetti if we select the party horn
   if(hornSelect == "party-horn"){
-
     jsConfetti.addConfetti()
   }
 }
