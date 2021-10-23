@@ -45,7 +45,8 @@ function playSound(event){
 
   var hornSelect = document.getElementById("horn-select").value;
   // Display Confetti if we select the party horn
-  if(hornSelect == "party-horn"){
+  var volumeValue = document.getElementById("volume").value;
+  if(hornSelect == "party-horn" && volumeValue != 0){
     jsConfetti.addConfetti()
   }
 }
