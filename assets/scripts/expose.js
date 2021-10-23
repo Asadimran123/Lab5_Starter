@@ -40,10 +40,14 @@ function setVolumeIcon(event){
 
 // when you  click the "play soound", this function makes the sound
 function playSound(event){
+  var hornSelect = document.getElementById("horn-select").value;
+  // if horn is not selected, we don't play sound
+  if( hornSelect == "select"){
+    return;
+  }
   var hornAudio = document.getElementsByClassName("hidden")[0];
   hornAudio.play();
 
-  var hornSelect = document.getElementById("horn-select").value;
   // Display Confetti if we select the party horn
   var volumeValue = document.getElementById("volume").value;
   if(hornSelect == "party-horn" && volumeValue != 0){
@@ -58,4 +62,5 @@ function init() {
   document.getElementById("volume-controls").addEventListener('input', setVolumeIcon);
   //when you click the 'play sound'
   document.querySelector('button').addEventListener('click', playSound);
+  
 }
