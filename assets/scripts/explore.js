@@ -5,7 +5,7 @@ window.addEventListener('DOMContentLoaded', init);
 function init() {
   setTimeout(() => {
     populateVoiceList();
-  }, 50);
+  }, 100);
   document.querySelector('button').addEventListener('click', playSound);
 }
 
