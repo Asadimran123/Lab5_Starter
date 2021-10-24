@@ -1,17 +1,17 @@
 // explore.js
 
 window.addEventListener('DOMContentLoaded', init);
+var synth = window.speechSynthesis;
 
 function init() {
   setTimeout(() => {
     populateVoiceList();
-  }, 100);
+  }, 50);
   document.querySelector('button').addEventListener('click', playSound);
 }
 
 // load all the available voices 
 function populateVoiceList() {
-  var synth = window.speechSynthesis;
   var voices = synth.getVoices();
   var voiceSelect = document.getElementById("voice-select");
 
