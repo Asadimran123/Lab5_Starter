@@ -4,7 +4,9 @@ window.addEventListener('DOMContentLoaded', init);
 var synth = window.speechSynthesis;
 
 function init() {
-  populateVoiceList();
+  setTimeout(() => {
+    populateVoiceList();
+  }, 50);
   document.querySelector('button').addEventListener('click', playSound);
 }
 
